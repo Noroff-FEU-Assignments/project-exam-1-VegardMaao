@@ -4,6 +4,7 @@
 
 body{
     margin: 0;
+    background-color: var(--primary-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -17,6 +18,8 @@ a, p, li{
     font-family: var(--regular-fonts);
     font-size: 1.2rem;
     color: var(--text-color);
+    line-height: 1.35;
+    font-weight: 500;
 }
 
 
@@ -117,6 +120,49 @@ main{
     min-height: 750px;
 }
 
+/* Intro section */
+
+.introduction{
+    margin: 40px auto;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-picture{
+    margin: auto;
+    max-width: 650px;
+    width: 80%;
+}
+
+.regular-text{
+    margin: 5px auto;
+    max-width: 650px;
+    width: 80%;
+}
+
+.cta-btn{
+    border: 2px solid var(--text-color);
+    border-radius: 50px;
+    padding: 15px 25px;
+    background-color: var(--cool-orange);
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* Newest posts scrollable box */ 
+
+.newest-posts{
+    min-height: 350px;
+    border: 2px solid;
+    margin: 20px auto;
+    max-width: 850px;
+}
+
 /* THIS IS FOR THE FOOTER */
 footer{
     height: 50px;
@@ -146,10 +192,12 @@ a > i{
 @media (min-width: 600px) {
     header{
         height: 70px;
+        align-items: center;
     }
 
     header > a{
         padding: 10px;
+        height: 60px;
     }
 
     nav{
