@@ -71,15 +71,10 @@ header > a{
 }
 
 .nav_li > a{
-    font-family: 'Oswald', 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: var(--header-fonts);
     font-size: 1.5rem;
     text-decoration: underline;
     padding: 0px 10px;
-    transition: ease-in-out 0.3s;
-}
-
-.nav_li > a:hover{
-    color: wheat;
     transition: ease-in-out 0.3s;
 }
 
