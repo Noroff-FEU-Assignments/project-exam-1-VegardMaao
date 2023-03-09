@@ -25,7 +25,17 @@
     border: 2px solid;
     margin: 20px auto;
     max-width: 850px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    overflow-y: scroll;
+}
+
+
+
+
+@media (min-width: 600px) {
+    .newest-posts{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
 

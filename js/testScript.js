@@ -1,5 +1,5 @@
 const domElement = document.querySelector(".newest-posts");
-let apiUrl = "https://sellmo.no/Flower_Power/wp-json/wp/v2/posts";
+let apiUrl = "https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?per_page=4&page=1";
 //I'll use the following to get a set amount of results via the URL;
 //https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?per_page=4&page=1
 //This returns 4 posts per page and sets what page I want to see.
