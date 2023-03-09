@@ -17,23 +17,6 @@
     width: 80%;
 }
 
-.regular-text{
-    margin: 5px auto;
-    max-width: 650px;
-    width: 80%;
-}
-
-.cta-btn{
-    border: 2px solid var(--text-color);
-    border-radius: 50px;
-    padding: 15px 25px;
-    background-color: var(--cool-orange);
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 10px;
-    text-decoration: none;
-}
 
 /* Newest posts scrollable box */ 
 
@@ -46,7 +29,3 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.single-post-in-list{
-    border: 1px dotted black;
-    margin: 5px;
-}
