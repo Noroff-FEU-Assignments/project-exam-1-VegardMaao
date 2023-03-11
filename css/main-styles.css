@@ -44,6 +44,7 @@ header > a{
     padding: 5px;
     display: flex;
     align-items: center;
+    max-width: 50px;
 }
 
 .header_logo{
