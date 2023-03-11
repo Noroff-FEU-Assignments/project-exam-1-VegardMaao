@@ -1,5 +1,5 @@
 const domElement = document.querySelector(".newest-posts");
-let apiUrl = "https://sellmo.no/Flower_Power/wp-json/wp/v2/posts";
+let apiUrl = "https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?_embed&";
 //I'll use the following to get a set amount of results via the URL;
 //https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?per_page=4&page=1
 //This returns 4 posts per page and sets what page I want to see.
@@ -22,10 +22,10 @@ let count = 1;
 
 function createURL(container, originalURL) {
     if (document.title === "Loppas Flea Circus - Home") {
-        let newURL = `${originalURL}?per_page=4&page=${count}`;
+        let newURL = `${originalURL}per_page=4&page=${count}`;
         getArray(container, newURL);
     } else {
-        let newURL = `${originalURL}?per_page=10&page=${count}`;
+        let newURL = `${originalURL}per_page=10&page=${count}`;
         getArray(container, newURL);
     }
     
@@ -64,6 +64,7 @@ function createHTML(container, array) {
 async function getArray(container, url) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
+    console.log(finishedResponse);
     createHTML(container, finishedResponse);
 };
 
