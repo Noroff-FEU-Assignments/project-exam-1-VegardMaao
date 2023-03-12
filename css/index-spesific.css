@@ -29,7 +29,30 @@
     overflow-y: scroll;
 }
 
+.single-post-in-list{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px;
+    justify-content: space-between;
+}
 
+.single-post-in-list > h3{
+    width: 250px;
+}
+
+.preview-header{
+    
+}
+
+.link-on-thumbnail{
+    align-self: center;
+}
+
+.featured_img_thumbnail{
+    max-width: 75px;
+    
+}
 
 
 @media (min-width: 600px) {

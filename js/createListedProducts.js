@@ -28,7 +28,7 @@ function createURL(container, originalURL) {
         let newURL = `${originalURL}per_page=10&page=${count}`;
         getArray(container, newURL);
     }
-    
+
 };
 
 createURL(domElement, apiUrl);
@@ -38,8 +38,8 @@ backBtn.addEventListener("click", () => {
         console.log("no change");
         return;
     } else {
-    count--;
-    createURL(domElement, apiUrl);
+        count--;
+        createURL(domElement, apiUrl);
     }
 });
 
@@ -52,23 +52,27 @@ function createHTML(container, array) {
     container.innerHTML = "";
     for (let i = 0; i < array.length; i++) {
         const singlePost = array[i];
-        if (array[i].links.['wp:featuredmedia'][0].embeddable === true) {
+        if (array[i].featured_media) {
             container.innerHTML += `
-            <img src="${array[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="" srcset="">
-        <div class="single-post-in-list">
-        <h3> ${array[i].title.rendered}</h3>
-        ${array[i].excerpt.rendered}
-        </div>
-        `;
+            <div class="single-post-in-list">
+            <a class="link-on-thumbnail" href="singleblogpost.html?id=${array[i].id}">
+            <img class="featured_img_thumbnail" src="${array[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="" srcset="">
+            </a>
+            <h3 class="preview-header"> ${array[i].title.rendered}</h3>
+            ${array[i].excerpt.rendered}
+            <a class="read-more" href="singleblogpost.html?id=${array[i].id}">Read more</a>
+            </div>
+            `;
         } else {
-        container.innerHTML += `
-        <div class="single-post-in-list">
-        <h3> ${array[i].title.rendered}</h3>
-        ${array[i].excerpt.rendered}
-        </div>
-        `;
+            container.innerHTML += `
+            <div class="single-post-in-list">
+            <h3 class="preview-header"> ${array[i].title.rendered}</h3>
+            ${array[i].excerpt.rendered}
+            <a class="read-more" href="singleblogpost.html?id=${array[i].id}">Read more</a>
+            </div>
+            `;
+        }
     }
-    }   
 }
 
 async function getArray(container, url) {

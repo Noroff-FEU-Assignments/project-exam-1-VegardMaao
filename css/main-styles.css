@@ -150,16 +150,12 @@ main{
     
 }
 
-.single-post-in-list{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 20px;
-    justify-content: space-between;
-}
-
-.single-post-in-list > h3{
-    width: 250px;
+.read-more{
+    border: 2px solid black;
+    padding: 10px 7px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
 }
 
 /* THIS IS FOR THE FOOTER */
