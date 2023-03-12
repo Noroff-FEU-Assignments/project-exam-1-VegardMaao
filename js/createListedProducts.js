@@ -52,12 +52,22 @@ function createHTML(container, array) {
     container.innerHTML = "";
     for (let i = 0; i < array.length; i++) {
         const singlePost = array[i];
+        if (array[i].links.['wp:featuredmedia'][0].embeddable === true) {
+            container.innerHTML += `
+            <img src="${array[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="" srcset="">
+        <div class="single-post-in-list">
+        <h3> ${array[i].title.rendered}</h3>
+        ${array[i].excerpt.rendered}
+        </div>
+        `;
+        } else {
         container.innerHTML += `
         <div class="single-post-in-list">
         <h3> ${array[i].title.rendered}</h3>
         ${array[i].excerpt.rendered}
         </div>
         `;
+    }
     }   
 }
 
