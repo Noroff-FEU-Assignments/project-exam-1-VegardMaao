@@ -1,0 +1,101 @@
+const domElement = document.querySelector(".newest-posts");
+let apiUrl = "https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?_embed&";
+//I'll use the following to get a set amount of results via the URL;
+//https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?per_page=4&page=1
+//This returns 4 posts per page and sets what page I want to see.
+//I can then use buttons and a "count" variable to change what page I'm on
+//Something like;
+//let count = 1;
+//button.onclick = count++
+//otherButton.onclick = count--
+//https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?per_page=4&page=${count}
+
+//However, I do want the function to be usable on both my index page 
+//And the overview page. Should be doable if the "per page" is also a variable
+//Maybe something I could fix via an if statment:
+//if(container.classlist ==== "newest-posts"){per_page=4} or something
+
+const backBtn = document.querySelector("#newer");
+const forthBtn = document.querySelector("#older");
+
+let start;
+let end;
+
+if (document.title === "Loppas Flea Circus - Home"){
+    start = 0;
+    end = 4;
+} else if (document.title === "Loppas Flea Circus - Post overview"){
+    start = 0;
+    end = 10;
+};
+
+
+backBtn.addEventListener("click", () => {
+    if (start >= 0 || end <= 4) {
+        console.log("no change");
+        return;
+    } else {
+        start = start - 4;
+        end = end - 4;
+        console.log(start, end);
+        getArray(domElement, apiUrl);
+    }
+});
+
+forthBtn.addEventListener("click", () => {
+    start = start + 4;
+    end = end + 4;
+    console.log(start, end);
+    getArray(domElement, apiUrl);
+})
+
+function createHTML(container, array) {
+    const filteredArray = array.filter(item => item.excerpt.rendered);
+    console.log("filtered array is ", filteredArray);
+    let slicedArray;
+    if (end > filteredArray.length) {
+        console.log("too high");
+        start = filteredArray.length-4
+        end = filteredArray.length;
+        console.log(start, end);
+        slicedArray = filteredArray.slice(start, end);
+    } else  {
+        slicedArray = filteredArray.slice(start, end);
+    }
+    console.log("sliced array is ", slicedArray);
+    container.innerHTML = "";
+    for (let i = 0; i < slicedArray.length; i++) {
+        const singlePost = slicedArray[i];
+        if (slicedArray[i].featured_media) {
+            container.innerHTML += `
+            <div class="single-post-in-list">
+            <a class="link-on-thumbnail" href="singleblogpost.html?id=${slicedArray[i].id}">
+            <img class="featured_img_thumbnail" src="${slicedArray[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="" srcset="">
+            </a>
+            <h3 class="preview-header"> ${slicedArray[i].title.rendered}</h3>
+            ${slicedArray[i].excerpt.rendered}
+            <a class="read-more" href="singleblogpost.html?id=${slicedArray[i].id}">Read more</a>
+            </div>
+            `;
+        } else {
+            container.innerHTML += `
+            <div class="single-post-in-list">
+                <span></span>
+            <h3 class="preview-header"> ${slicedArray[i].title.rendered}</h3>
+            ${slicedArray[i].excerpt.rendered}
+            <a class="read-more" href="singleblogpost.html?id=${slicedArray[i].id}">Read more</a>
+            </div>
+            `;
+        }
+    } 
+}
+
+
+async function getArray(container, url) {
+    let response = await fetch(url);
+    let finishedResponse = await response.json();
+    console.log("original array is ", finishedResponse);
+    createHTML(container, finishedResponse);
+};
+
+getArray(domElement, apiUrl);

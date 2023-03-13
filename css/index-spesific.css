@@ -30,11 +30,12 @@
 }
 
 .single-post-in-list{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 20px;
-    justify-content: space-between;
+    display: grid;
+    /* margin: 20px; */
+    justify-items: center;
+    align-items: baseline;
+    justify-content: center;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .single-post-in-list > h3{
