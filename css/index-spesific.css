@@ -21,10 +21,10 @@
 /* Newest posts scrollable box */ 
 
 .newest-posts{
-    min-height: 350px;
+    min-height: 400px;
     border: 2px solid;
     margin: 20px auto;
-    max-width: 850px;
+    max-width: 900px;
     display: flex;
     overflow-y: scroll;
 }

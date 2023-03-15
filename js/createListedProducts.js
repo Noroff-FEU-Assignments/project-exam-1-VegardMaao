@@ -19,13 +19,14 @@ const backBtn = document.querySelector("#newer");
 const forthBtn = document.querySelector("#older");
 
 let count = 1;
+let ten = 10;
 
 function createURL(container, originalURL) {
     if (document.title === "Loppas Flea Circus - Home") {
         let newURL = `${originalURL}per_page=4&page=${count}`;
         getArray(container, newURL);
     } else {
-        let newURL = `${originalURL}per_page=10&page=${count}`;
+        let newURL = `${originalURL}per_page=${ten}&page=${count}`;
         getArray(container, newURL);
     }
 
@@ -44,13 +45,8 @@ backBtn.addEventListener("click", () => {
 });
 
 forthBtn.addEventListener("click", () => {
-    if (count >= 3) {
-        console.log("can't go higher");
-        return;
-    } else {
         count++;
         createURL(domElement, apiUrl);
-    }
 })
 
 function createHTML(container, array) {
@@ -84,7 +80,6 @@ function createHTML(container, array) {
 async function getArray(container, url) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
-    console.log(finishedResponse);
     if (finishedResponse.code === "rest_post_invalid_page_number") {
         forthBtn.disabled = true;
         container.innerHTML = `
@@ -93,6 +88,7 @@ async function getArray(container, url) {
         <p>By the way, have you considered checking out the overview page?</p>
         <p>It can be hard to find what you are looking for in a format like this, 
         so check out the overview page for a birds eye view!</p>
+        <a href="blogposts.html" class="main-cta-btn">Overview page</a>
         </div>
         `;
     } else {
