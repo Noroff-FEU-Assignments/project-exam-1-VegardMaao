@@ -36,6 +36,7 @@
     justify-content: center;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     max-height: 400px;
+    padding-top: 15px;
 }
 
 .preview-header{
@@ -52,6 +53,8 @@
     object-fit: cover;
     height: 100px;
     width: 100px;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
 }
 
  

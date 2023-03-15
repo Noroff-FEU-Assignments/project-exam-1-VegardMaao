@@ -1,0 +1,14 @@
+.featured_img_thumbnail{
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+}
+
+.single-post-in-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px auto;
+}
