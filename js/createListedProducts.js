@@ -61,7 +61,7 @@ function createHTML(container, array) {
             container.innerHTML += `
             <div class="single-post-in-list">
             <a class="link-on-thumbnail" href="singleblogpost.html?id=${array[i].id}">
-            <img class="featured_img_thumbnail" src="${array[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="" srcset="">
+            <img class="featured_img_thumbnail" src="${array[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${array[i]._embedded['wp:featuredmedia']['0'].alt_text}" title="${array[i]._embedded['wp:featuredmedia']['0'].alt_text}">
             </a>
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
             ${array[i].excerpt.rendered}
