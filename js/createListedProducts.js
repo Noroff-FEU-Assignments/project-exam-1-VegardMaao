@@ -44,8 +44,13 @@ backBtn.addEventListener("click", () => {
 });
 
 forthBtn.addEventListener("click", () => {
-    count++;
-    createURL(domElement, apiUrl);
+    if (count >= 3) {
+        console.log("can't go higher");
+        return;
+    } else {
+        count++;
+        createURL(domElement, apiUrl);
+    }
 })
 
 function createHTML(container, array) {
@@ -66,6 +71,7 @@ function createHTML(container, array) {
         } else {
             container.innerHTML += `
             <div class="single-post-in-list">
+            <span class="link-on-thumbnail"></span>
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
             ${array[i].excerpt.rendered}
             <a class="read-more" href="singleblogpost.html?id=${array[i].id}">Read more</a>
@@ -79,7 +85,20 @@ async function getArray(container, url) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
     console.log(finishedResponse);
-    createHTML(container, finishedResponse);
+    if (finishedResponse.code === "rest_post_invalid_page_number") {
+        forthBtn.disabled = true;
+        container.innerHTML = `
+        <div class="no-more-posts">
+        <h3 class="preview-header">No more posts</h3>
+        <p>By the way, have you considered checking out the overview page? 
+        It can be hard to find what you are looking for in a format like this, 
+        so check out the overview page for a birds eye view!</p>
+        </div>
+        `;
+    } else {
+        forthBtn.disabled = false;
+        createHTML(container, finishedResponse);   
+    }
 };
 
 // getArray(domElement, apiUrl);
