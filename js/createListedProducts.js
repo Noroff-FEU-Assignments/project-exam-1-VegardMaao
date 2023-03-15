@@ -90,8 +90,8 @@ async function getArray(container, url) {
         container.innerHTML = `
         <div class="no-more-posts">
         <h3 class="preview-header">No more posts</h3>
-        <p>By the way, have you considered checking out the overview page? 
-        It can be hard to find what you are looking for in a format like this, 
+        <p>By the way, have you considered checking out the overview page?</p>
+        <p>It can be hard to find what you are looking for in a format like this, 
         so check out the overview page for a birds eye view!</p>
         </div>
         `;
