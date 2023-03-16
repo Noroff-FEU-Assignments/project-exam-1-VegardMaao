@@ -124,7 +124,7 @@ main{
     width: 80%;
 }
 
-.main-cta-btn{
+.main-cta-btn, .secondary-cta-btn{
     border: 2px solid var(--text-color);
     padding: 15px 25px;
     background-color: var(--primary-color);
@@ -151,21 +151,7 @@ main{
 }
 
 .secondary-cta-btn{
-    border: 2px solid var(--text-color);
     padding: 7px 14px;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 15px 10px;
-    text-decoration: none;
-    
-    -webkit-transform: skewX(-10deg);
-    -moz-transform: skewX(-10deg);
-    -ms-transform: skewX(-10deg);
-    transform: skewX(-10deg);
-    filter: drop-shadow(20px 10px 4px var(--text-color));
-    transition: ease-in-out 0.2s;
 }
 
 .read-more{
