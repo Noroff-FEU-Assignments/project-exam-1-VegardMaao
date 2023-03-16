@@ -1,4 +1,4 @@
-export function createHTML(container, array, btn) {
+export function createHTML(container, array) {
     container.innerHTML = "";
     for (let i = 0; i < array.length; i++) {
         const singlePost = array[i];
