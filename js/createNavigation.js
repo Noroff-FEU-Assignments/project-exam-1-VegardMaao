@@ -1,4 +1,4 @@
-import { navItems } from "../export-objects/export-navigation.js";
+import { navItems } from "./export-objects/export-navigation.js";
 
 const navDOM = document.querySelector(".nav_ul");
 
