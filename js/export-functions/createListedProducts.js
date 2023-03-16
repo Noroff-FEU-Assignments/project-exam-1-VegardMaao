@@ -10,7 +10,7 @@ export function createHTML(container, array) {
             </a>
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
             ${array[i].excerpt.rendered}
-            <a class="read-more" href="singleblogpost.html?id=${array[i].id}">Read more</a>
+            <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read more</a>
             </div>
             `;
         } else {
@@ -19,7 +19,7 @@ export function createHTML(container, array) {
             <span class="link-on-thumbnail"></span>
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
             ${array[i].excerpt.rendered}
-            <a class="read-more" href="singleblogpost.html?id=${array[i].id}">Read more</a>
+            <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read more</a>
             </div>
             `;
         }
@@ -51,7 +51,7 @@ export async function getArray(container, url, btn, count) {
               `;
     } else {
         btn.disabled = false;
-        createHTML(container, finishedResponse, btn);   
+        createHTML(container, finishedResponse);   
     }
 };
 

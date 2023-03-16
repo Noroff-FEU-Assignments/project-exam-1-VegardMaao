@@ -3,7 +3,7 @@
 
 /* Intro section */
 
-.introduction{
+.introduction, .about-and-contact{
     margin: 40px auto;
     max-width: 850px;
     display: flex;
@@ -65,6 +65,10 @@
     border: 2px solid var(--text-color);
     border-radius: 10px;
 }
+
+
+/* Contact and about */
+
 
  
 @media (min-width: 600px) {

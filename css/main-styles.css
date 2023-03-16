@@ -142,7 +142,7 @@ main{
     transition: ease-in-out 0.2s;
 }
 
-.main-cta-btn:hover{
+.main-cta-btn:hover, .secondary-cta-btn:hover{
     filter: drop-shadow(15px 5px 2px var(--cool-orange));
     -webkit-transform: skewX(-5deg);
     -moz-transform: skewX(-5eg);
@@ -150,12 +150,26 @@ main{
     
 }
 
-.read-more{
-    border: 2px solid black;
-    padding: 10px 7px;
-    border-radius: 20px;
-    text-align: center;
+.secondary-cta-btn{
+    border: 2px solid var(--text-color);
+    padding: 7px 14px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 15px 10px;
     text-decoration: none;
+    
+    -webkit-transform: skewX(-10deg);
+    -moz-transform: skewX(-10deg);
+    -ms-transform: skewX(-10deg);
+    transform: skewX(-10deg);
+    filter: drop-shadow(20px 10px 4px var(--text-color));
+    transition: ease-in-out 0.2s;
+}
+
+.read-more{
+    padding: 5px 10px;
 }
 
 /* THIS IS FOR THE FOOTER */
