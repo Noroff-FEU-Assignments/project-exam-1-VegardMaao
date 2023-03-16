@@ -1,4 +1,4 @@
-import { getArray } from "/js/createListedProducts.js";
+import { getArray } from "/js/export-functions/createListedProducts.js";
 
 let count = 1;
 const domElement = document.querySelector(".newest-posts");
@@ -15,7 +15,7 @@ backBtn.addEventListener("click", () => {
     } else {
         count--;
         let newUrl = `${apiUrl}page=${count}`;
-        getArray(domElement, newUrl);
+        getArray(domElement, newUrl, forthBtn);
     }
 });
 
@@ -23,20 +23,7 @@ forthBtn.addEventListener("click", () => {
         console.log(apiUrl, count);
         count++;
         let newUrl = `${apiUrl}page=${count}`;
-        try {
-            getArray(domElement, newUrl);
-        } catch (error) {
-            container.innerHTML = `
-                <div class="no-more-posts">
-                <h3 class="preview-header">No more posts</h3>
-                <p>By the way, have you considered checking out the overview page?</p>
-                <p>It can be hard to find what you are looking for in a format like this, 
-                so check out the overview page for a birds eye view!</p>
-                <a href="blogposts.html" class="main-cta-btn">Overview page</a>
-                </div>
-              `;
-        }
-        
-})
+        getArray(domElement, newUrl, forthBtn);
+});
 
-getArray(domElement, apiUrl);
+getArray(domElement, apiUrl, forthBtn);

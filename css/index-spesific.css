@@ -39,6 +39,15 @@
     padding-top: 15px;
 }
 
+.no-more-posts{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .preview-header{
     width: 250px;
     font-size: 1.4rem;
@@ -63,6 +72,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         place-items: center;
-        overflow-y: scroll;
+        overflow-y: hidden;
     }
 }
