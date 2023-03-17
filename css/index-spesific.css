@@ -20,6 +20,10 @@
 
 /* Newest posts scrollable box */ 
 
+.new-posts-go-here{
+    
+}
+
 .newest-posts{
     min-height: 400px;
     border: 2px solid;
@@ -51,8 +55,12 @@
 }
 
 .single-post-in-list > p{
-    height: 50px;
+    height: 75px;
     overflow: hidden;
+    margin: 5px auto;
+    max-width: 650px;
+    width: 80%;
+    text-align: center;
 }
 
 .featured_img_thumbnail{
@@ -75,6 +83,12 @@
 .backandforth{
     margin: 0px auto;
     display: flex;
+    justify-content: center;
+}
+
+.broswebtn{
+    margin: 0px 50px;
+    padding: 5px 10px;
 }
 
 /* Contact and about */
