@@ -20,16 +20,13 @@
 
 /* Newest posts scrollable box */ 
 
-.new-posts-go-here{
-    
-}
-
 .newest-posts{
-    min-height: 400px;
+    min-height: 500px;
     border: 2px solid;
     margin: 20px auto;
     max-width: 900px;
     display: flex;
+    flex-direction: column;
     overflow-y: scroll;
 }
 
@@ -88,7 +85,14 @@
 
 .broswebtn{
     margin: 0px 50px;
-    padding: 5px 10px;
+    padding: 7px 14px;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.broswebtn:disabled{
+    color: gray;
 }
 
 /* Contact and about */
