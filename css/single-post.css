@@ -1,0 +1,13 @@
+.single-post{
+    margin: 40px auto;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-picture{
+    margin: auto;
+    max-width: 650px;
+    width: 80%;
+}
