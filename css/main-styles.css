@@ -162,6 +162,28 @@ main{
     padding: 5px 10px;
 }
 
+.loader{
+    background-color: var(--text-color);
+    border: 15px solid var(--primary-color);
+    border-top: 15px solid var(--cool-orange);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 /* THIS IS FOR THE FOOTER */
 footer{
     height: 50px;

@@ -36,4 +36,6 @@ forthBtn.addEventListener("click", () => {
     getArray(domElement, newUrl, forthBtn);
 });
 
-getArray(domElement, apiUrl, forthBtn);
+setTimeout(() => {
+    getArray(domElement, apiUrl, forthBtn);
+  }, 850);

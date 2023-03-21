@@ -30,10 +30,11 @@ export async function getArray(container, url, btn, count) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
     if (finishedResponse.data && document.title === "Home - Loppas Flea Circus") {
+        container.classList.remove("loader");
         btn.disabled = true;
         container.innerHTML = `
                 <div class="no-more-posts">
-                <h3 class="preview-header">No more posts, go back</h3>
+                <h3 class="preview-header">No more posts, sorry</h3>
                 <p class="regular-text">By the way, have you considered checking out the overview page?</p>
                 <p class="regular-text">It can be hard to find what you are looking for in a format like this, 
                 so check out the overview page for a birds eye view!</p>
@@ -41,6 +42,7 @@ export async function getArray(container, url, btn, count) {
                 </div>
               `;
     } else if (count >= finishedResponse.length && document.title === "Overview - Loppas Flea Circus") {
+        container.classList.remove("loader");
         btn.disabled = true;
         container.innerHTML += `
                 <div class="no-more-posts">
@@ -50,6 +52,7 @@ export async function getArray(container, url, btn, count) {
                 </div>
               `;
     } else {
+        container.classList.remove("loader");
         btn.disabled = false;
         createHTML(container, finishedResponse);
     }

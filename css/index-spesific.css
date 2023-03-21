@@ -30,7 +30,14 @@
     overflow-y: scroll;
 }
 
+.loader{
+    grid-column: 2/4;
+    align-self: center;
+    margin: 50%;
+}
+
 .single-post-in-list{
+    margin: 0px 20px;
     display: grid;
     justify-items: center;
     align-items: baseline;
