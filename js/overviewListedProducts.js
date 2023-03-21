@@ -7,7 +7,7 @@ let apiUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?_embed&`;
 let moreBtn = document.querySelector("#more");
 
 moreBtn.addEventListener("click", () => {
-        console.log(apiUrl, count);
+        count = count + 10;
         let newUrl = `${apiUrl}per_page=${count}&page=1`;
         getArray(domElement, newUrl, moreBtn, count);    
 });

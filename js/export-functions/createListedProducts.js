@@ -43,6 +43,7 @@ export async function getArray(container, url, btn, count) {
               `;
     } else if (count >= finishedResponse.length && document.title === "Overview - Loppas Flea Circus") {
         container.classList.remove("loader");
+        createHTML(container, finishedResponse);
         btn.disabled = true;
         container.innerHTML += `
                 <div class="no-more-posts">
