@@ -43,7 +43,7 @@
     align-items: baseline;
     justify-content: center;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    max-height: 400px;
+    height: 450px;
     padding-top: 15px;
 }
 
