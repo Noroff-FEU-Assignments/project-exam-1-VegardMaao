@@ -25,6 +25,6 @@ async function createPost(url) {
 
 }
 
-createPost(apiUrl);
-
-//<img class="intro-picture" src="${postInfo._embedded['wp:featuredmedia']['0'].source_url}" alt="" title="">
+setTimeout(() => {
+    createPost(apiUrl);
+  }, 850);
