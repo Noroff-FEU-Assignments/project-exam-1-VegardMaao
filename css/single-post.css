@@ -20,6 +20,10 @@ section{
     width: 80%;
 }
 
+.date {
+    font-size: 0.9rem;
+}
+
 figure > img{
     border-radius: 25px;
     width: 100%;
