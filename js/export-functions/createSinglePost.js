@@ -18,11 +18,8 @@ export async function createPost(container, url) {
             `;
         }
     }  else {
-        for (let i = 0; i < postInfo.length; i++) {
-            console.log(postInfo[i]);
-            let id = postInfo[i].id;
+            let id = postInfo[0].id;
             let newUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/${id}?_embed`;
             createPost(container, newUrl);
-        }
     }
 }
