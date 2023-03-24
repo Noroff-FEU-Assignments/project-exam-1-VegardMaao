@@ -3,7 +3,7 @@
 
 /* Intro section */
 
-.introduction, .about-and-contact{
+.introduction,  .intro-info, .about-and-contact{
     margin: 40px auto;
     max-width: 850px;
     display: flex;
@@ -11,12 +11,15 @@
     align-items: center;
 }
 
-.intro-picture{
+.featured-picture{
     margin: auto;
     max-width: 650px;
     width: 80%;
 }
 
+.intro-info > p{
+    margin: 0.5rem;
+}
 
 /* Newest posts scrollable box */ 
 
