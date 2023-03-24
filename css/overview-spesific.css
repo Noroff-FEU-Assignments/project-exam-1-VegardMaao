@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    max-width: 850px;
+    max-width: 1100px;
     margin: auto;
 }
 
@@ -57,4 +57,13 @@
 
 .backandforth:disabled{
     color: gray;
+}
+
+@media (min-width: 600px) {
+    .newest-posts{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .no-more-posts{
+        grid-column: 1/5;
+    }
 }

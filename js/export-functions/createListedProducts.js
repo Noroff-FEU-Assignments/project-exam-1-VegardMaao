@@ -48,7 +48,7 @@ export async function getArray(container, url, btn, count) {
         container.innerHTML += `
                 <div class="no-more-posts">
                 <h3 class="preview-header">No more posts</h3>
-                <p class="regular-text">You've reached bedrock buddy. Let's get back up</p>
+                <p class="regular-text">You've reached bedrock buddy. Let's get back up. You can use the filters to find what you are looking for by the way!</p>
                 <a href="blogposts.html#beginning" class="secondary-cta-btn">Take me up top</a>
                 </div>
               `;

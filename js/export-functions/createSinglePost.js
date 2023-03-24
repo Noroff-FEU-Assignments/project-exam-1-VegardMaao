@@ -1,10 +1,4 @@
-const container = document.querySelector(".single-post");
-const queryString = document.location.search;
-const parameter = new URLSearchParams(queryString);
-const id = parameter.get("id");
-const apiUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/${id}?_embed`;
-
-async function createPost(url) {
+export async function createPost(container, url) {
     const productResponse = await fetch(url);
     const postInfo = await productResponse.json();
 
@@ -24,7 +18,3 @@ async function createPost(url) {
     }
 
 }
-
-setTimeout(() => {
-    createPost(apiUrl);
-  }, 850);
