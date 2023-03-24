@@ -4,10 +4,10 @@ export async function createPost(container, url) {
 
     if (postInfo._embedded) {
         document.title = postInfo.title.rendered + "- Loppas Big Blog";
-        
+
         if (postInfo._embedded['wp:featuredmedia']) {
             let postedDate = postInfo.date;
-            let slicedPostDate = postedDate.slice(0, postedDate.length -9);
+            let slicedPostDate = postedDate.slice(0, postedDate.length - 9);
             let editDate = postInfo.modified;
             let slicedEditDate = editDate.slice(0, editDate.length - 9);
 
@@ -25,9 +25,9 @@ export async function createPost(container, url) {
             <p class="date">Posted the ${slicedDate}, edited the </p>
             `;
         }
-    }  else {
-            let id = postInfo[0].id;
-            let newUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/${id}?_embed`;
-            createPost(container, newUrl);
+    } else {
+        let id = postInfo[0].id;
+        let newUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/${id}?_embed`;
+        createPost(container, newUrl);
     }
 }
