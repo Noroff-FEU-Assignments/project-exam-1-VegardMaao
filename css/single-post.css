@@ -12,12 +12,18 @@ section{
     max-width: 650px;
     width: 80%;
     border-radius: 10px;
+    border: 2px solid var(--text-color);
+    object-fit: cover;
 }
 
 .single-post > p{
     margin: 5px auto;
     max-width: 650px;
     width: 80%;
+}
+
+.featured-picture{
+    max-height: 500px;
 }
 
 figure > img{

@@ -122,7 +122,7 @@ main{
     min-height: 750px;
 }
 
-.regular-text{
+.regular-text, .intro-info > p{
     margin: 5px auto;
     max-width: 650px;
     width: 80%;

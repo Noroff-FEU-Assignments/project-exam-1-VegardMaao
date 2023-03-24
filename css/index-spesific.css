@@ -3,8 +3,11 @@
 
 /* Intro section */
 
-.introduction,  .intro-info, .about-and-contact{
+.introduction{
     margin: 40px auto;
+}
+
+.introduction,  .intro-info, .about-and-contact{
     max-width: 850px;
     display: flex;
     flex-direction: column;
