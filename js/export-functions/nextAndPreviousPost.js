@@ -3,7 +3,7 @@ function nextPost(array, id) {
     for (let i = 0; i < array.length; i++) {
         if (array[i].id === idNumber) {
             let newID = array[i + 1].id;
-            location.href = `http://127.0.0.1:5500/singleblogpost.html?id=${newID}`;
+            location.href = `singleblogpost.html?id=${newID}`;
         }
     }
 }
@@ -13,7 +13,7 @@ function prevPost(array, id) {
     for (let i = 0; i < array.length; i++) {
         if (array[i].id === idNumber) {
             let newID = array[i - 1].id;
-            location.href = `http://127.0.0.1:5500/singleblogpost.html?id=${newID}`;
+            location.href = `singleblogpost.html?id=${newID}`;
         }
     }
 }
