@@ -15,6 +15,12 @@ section{
     border: 2px solid var(--text-color);
     object-fit: cover;
 }
+.single-post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 
 .single-post > p{
     margin: 5px auto;

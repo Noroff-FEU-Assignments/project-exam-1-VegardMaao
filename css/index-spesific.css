@@ -98,18 +98,6 @@
     justify-content: center;
 }
 
-.broswebtn{
-    margin: 0px 50px;
-    padding: 7px 14px;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.broswebtn:disabled{
-    color: gray;
-}
-
 /* Contact and about */
 
 .about-and-contact{

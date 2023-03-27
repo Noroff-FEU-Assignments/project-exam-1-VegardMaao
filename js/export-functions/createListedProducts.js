@@ -58,5 +58,3 @@ export async function getArray(container, url, btn, count) {
         createHTML(container, finishedResponse);
     }
 };
-
-// getArray(domElement, apiUrl);

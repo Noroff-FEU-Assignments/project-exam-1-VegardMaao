@@ -1,12 +1,26 @@
 import { createPost } from "../js/export-functions/createSinglePost.js";
 
+import { makeArray } from "../js/export-functions/nextAndPreviousPost.js";
+
 const container = document.querySelector(".single-post");
 const queryString = document.location.search;
 const parameter = new URLSearchParams(queryString);
-const id = parameter.get("id");
-const apiUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/${id}?_embed`;
+let id = parameter.get("id");
+const apiPostUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/${id}?_embed`;
 
 
 setTimeout(() => {
-    createPost(container, apiUrl);
-  }, 850);
+  createPost(container, apiPostUrl);
+}, 850);
+
+const prevBtn = document.querySelector("#previous");
+const nextBtn = document.querySelector("#next");
+const apiAllPostsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/?_embed`;
+
+prevBtn.addEventListener("click", () => {
+  makeArray(apiAllPostsUrl, prevBtn, id);
+});
+
+nextBtn.addEventListener("click", () => {
+  makeArray(apiAllPostsUrl, nextBtn, id);
+});
