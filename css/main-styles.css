@@ -69,14 +69,17 @@ header > a{
 .nav_ul{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     margin: 0px;
     background-color: var(--primary-color);
     width: 70%;
+    border: 2px solid var(--text-color);
+    border-top: none;
     border-radius: 0px 0px 0px 15px;
     padding: 50px 0px 0px 0px;
     align-items: flex-end;
     align-self: flex-end;
+    height: 100%;
+    justify-content: start;
 }
 
 .nav_li{
@@ -107,6 +110,7 @@ nav{
     display: flex;
     flex-direction: column;
     position: relative;
+    height: 404px;
 }
 
 #menu_icon{
@@ -258,9 +262,11 @@ a > i{
     .nav_ul{
         display: flex;
         flex-direction: row;
+        justify-content: space-evenly;
         margin: 0px auto;
         padding: 0px;
         width: 100%;
+        border: none;
     }
     
     .nav_li{

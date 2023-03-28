@@ -29,7 +29,7 @@ export function createHTML(container, array) {
 export async function getArray(container, url, btn, count) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
-    if (finishedResponse.data) {
+    if (finishedResponse.data  && document.title === "Home - Loppas Big Blog") {
         container.classList.remove("loader");
         btn.disabled = true;
         container.innerHTML = `
@@ -41,7 +41,7 @@ export async function getArray(container, url, btn, count) {
                 <a href="blogposts.html" class="secondary-cta-btn">Overview page</a>
                 </div>
               `;
-    } else if (count >= finishedResponse.length && document.title === "Overview - Loppas Flea Circus") {
+    } else if (count >= finishedResponse.length && document.title === "Overview - Loppas Big Blog") {
         container.classList.remove("loader");
         createHTML(container, finishedResponse);
         btn.disabled = true;

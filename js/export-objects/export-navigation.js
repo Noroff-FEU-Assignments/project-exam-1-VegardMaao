@@ -4,15 +4,15 @@ export const navItems = [{
     url: "index.html",
     index: 0
 },{
-    title: "Blog overview" ,
+    title: "Blog" ,
     url: "blogposts.html",
     index: 1
 },{
-    title: "About us" ,
+    title: "About" ,
     url: "about.html" ,
     index: 2
 },{
-    title: "Contact us",
+    title: "Contact",
     url: "contact.html",
     index: 3
 }];
