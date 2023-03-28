@@ -15,10 +15,15 @@ async function findPlaceInArray(item, btn1, btn2) {
 export async function createPost(container, url, btn1, btn2) {
     const productResponse = await fetch(url);
     const postInfo = await productResponse.json();
-    findPlaceInArray(postInfo, btn1, btn2);
+    
+    if (document.title !== "Home - Loppas Big Blog") {
+        console.log("hello")
+        findPlaceInArray(postInfo, btn1, btn2);
+        document.title = postInfo.title.rendered + " - Loppas Big Blog";
+    }
 
     if (postInfo._embedded) {
-        document.title = postInfo.title.rendered + " - Loppas Big Blog";
+        
 
         if (postInfo._embedded['wp:featuredmedia']) {
             let postedDate = postInfo.date;
