@@ -17,7 +17,6 @@ export async function createPost(container, url, btn1, btn2) {
     const postInfo = await productResponse.json();
     
     if (document.title !== "Home - Loppas Big Blog") {
-        console.log("hello")
         findPlaceInArray(postInfo, btn1, btn2);
         document.title = postInfo.title.rendered + " - Loppas Big Blog";
     }
