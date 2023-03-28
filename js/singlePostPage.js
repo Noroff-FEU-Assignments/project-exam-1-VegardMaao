@@ -15,7 +15,7 @@ setTimeout(() => {
 
 const prevBtn = document.querySelector("#previous");
 const nextBtn = document.querySelector("#next");
-const apiAllPostsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/?_embed`;
+const apiAllPostsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/?_embedded&per_page=100`;
 
 prevBtn.addEventListener("click", () => {
   makeArray(apiAllPostsUrl, prevBtn, id);

@@ -1,17 +1,21 @@
-function nextPost(array, id) {
+function nextPost(array, btn, id) {
     let idNumber = parseInt(id);
     for (let i = 0; i < array.length; i++) {
-        if (array[i].id === idNumber) {
+        if (i === array.length - 1) {
+            btn.disabled = true;
+        } else if (array[i].id === idNumber) {
             let newID = array[i + 1].id;
             location.href = `singleblogpost.html?id=${newID}`;
         }
     }
 }
 
-function prevPost(array, id) {
+function prevPost(array, btn, id) {
     let idNumber = parseInt(id);
     for (let i = 0; i < array.length; i++) {
-        if (array[i].id === idNumber) {
+        if (i === 0) {
+            btn.disabled = true;
+        } else if (array[i].id === idNumber) {
             let newID = array[i - 1].id;
             location.href = `singleblogpost.html?id=${newID}`;
         }
@@ -22,10 +26,11 @@ export async function makeArray(url, btn, idFromUrl) {
     const id = idFromUrl;
     let response = await fetch(url);
     let finishedResponse = await response.json();
+    console.log(finishedResponse);
     if (btn.id === "next") {
-        nextPost(finishedResponse, id);
+        nextPost(finishedResponse, btn, id);
     } else if (btn.id === "previous") {
-        prevPost(finishedResponse, id);
+        prevPost(finishedResponse, btn, id);
     }
 }
 

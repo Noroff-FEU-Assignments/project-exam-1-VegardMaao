@@ -32,6 +32,7 @@
     min-height: 500px;
     border: 2px solid;
     margin: 20px auto;
+    min-width: 100%;
     max-width: 900px;
     display: flex;
     flex-direction: column;
