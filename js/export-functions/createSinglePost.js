@@ -18,7 +18,7 @@ export async function createPost(container, url, btn1, btn2) {
     findPlaceInArray(postInfo, btn1, btn2);
 
     if (postInfo._embedded) {
-        document.title = postInfo.title.rendered + "- Loppas Big Blog";
+        document.title = postInfo.title.rendered + " - Loppas Big Blog";
 
         if (postInfo._embedded['wp:featuredmedia']) {
             let postedDate = postInfo.date;

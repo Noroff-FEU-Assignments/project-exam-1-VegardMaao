@@ -29,7 +29,8 @@ export function createHTML(container, array) {
 export async function getArray(container, url, btn, count) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
-    if (finishedResponse.data && document.title === "Home - Loppas Flea Circus") {
+    console.log(finishedResponse);
+    if (finishedResponse.data) {
         container.classList.remove("loader");
         btn.disabled = true;
         container.innerHTML = `
