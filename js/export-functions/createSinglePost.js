@@ -1,6 +1,21 @@
-export async function createPost(container, url) {
+async function findPlaceInArray(item, btn1, btn2) {
+    const response = await fetch(`https://sellmo.no/Flower_Power/wp-json/wp/v2/posts/?_embedded&per_page=100`);
+    const finishedResponse = await response.json();
+    for (let i = 0; i < finishedResponse.length; i++) {
+        if (finishedResponse[i].id === item.id) {
+            if(i === 0){
+                btn1.disabled = true;
+            } else if (i === finishedResponse.length -1) {
+                btn2.disabled = true;
+            }
+        }
+    }
+}
+
+export async function createPost(container, url, btn1, btn2) {
     const productResponse = await fetch(url);
     const postInfo = await productResponse.json();
+    findPlaceInArray(postInfo, btn1, btn2);
 
     if (postInfo._embedded) {
         document.title = postInfo.title.rendered + "- Loppas Big Blog";
