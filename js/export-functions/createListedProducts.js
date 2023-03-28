@@ -29,7 +29,6 @@ export function createHTML(container, array) {
 export async function getArray(container, url, btn, count) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
-    console.log(finishedResponse);
     if (finishedResponse.data) {
         container.classList.remove("loader");
         btn.disabled = true;
