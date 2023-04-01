@@ -82,12 +82,12 @@ header > a{
     justify-content: start;
 }
 
-.nav_li{
+.nav_ul > li{
     list-style: none;
     margin: 10px 15px;
 }
 
-.nav_li > a{
+.nav_ul > li > a{
     font-family: var(--header-fonts);
     font-size: 1.5rem;
     text-decoration: underline;
@@ -269,11 +269,11 @@ a > i{
         border: none;
     }
     
-    .nav_li{
+    .nav_ul > li{
         margin: 0px;
     }
 
-    .nav_li > a{
+    .nav_ul > li > a{
         text-decoration: none;
         font-size: 2rem;
     }
