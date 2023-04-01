@@ -219,9 +219,8 @@ footer{
     height: 50px;
     border-top: 2px solid black;
     padding: 0px;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 3fr 1fr;
+    display: flex;
+    flex-direction: column;
     background-color: var(--primary-color);
     max-width: 100%;
 }
@@ -235,7 +234,8 @@ a > i{
 }
 
 .about{
-    align-self: flex-end;
+    align-self: flex-start;
+    margin: 0px 10px;
     background-color: var(--primary-color);
 }
 
