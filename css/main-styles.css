@@ -179,7 +179,9 @@ main{
 }
 
 .broswebtn:disabled{
-    color: gray;
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+    border: none;
 }
 
 .read-more{

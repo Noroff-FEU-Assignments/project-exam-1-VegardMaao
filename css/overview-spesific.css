@@ -56,7 +56,7 @@
 }
 
 .backandforth:disabled{
-    color: gray;
+    display: none;
 }
 
 @media (min-width: 600px) {
