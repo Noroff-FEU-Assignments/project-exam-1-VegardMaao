@@ -54,11 +54,21 @@
         </section>
 
         <section class="comment-section">
-            <fieldset class="enter-comment">
-                <label for="custom-comment">Leave a comment</label>
-                <textarea name="custom-comment" id="custom-comment" cols="30" rows="10" placeholder="This does not work yet. It's only here for 'scaffolfing' at the moment"></textarea>
-                <button>Submit comment</button>
-            </fieldset>
+            <form action="submit">
+                <fieldset class="enter-comment">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Full Name" required>
+                    <label for="custom-comment">Leave a comment</label>
+                    <textarea name="custom-comment" id="custom-comment" cols="30" rows="10" minlength="5" required
+                        placeholder="This does not work yet. It's only here for 'scaffolfing' at the moment">
+                </textarea>
+                </fieldset>
+                <button disabled="true" class="submit-comment">Submit comment</button>
+            </form>
+
+            <div class="all-comments-on-post">
+
+            </div>
         </section>
     </main>
 
