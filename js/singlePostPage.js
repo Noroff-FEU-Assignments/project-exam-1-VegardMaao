@@ -35,7 +35,7 @@ import { validateAllInputs } from "./export-functions/validateForm.js";
 const nameInput = document.querySelector("#name");
 const commentInput = document.querySelector("#custom-comment");
 const allFormInputs = document.querySelector("fieldset").elements;
-const submitCommentBtn = document.querySelector(".submit-comment");
+const submitCommentBtn = document.querySelector(".submit");
 
 commentInput.textContent = "";
 
