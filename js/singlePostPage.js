@@ -29,7 +29,7 @@ nextBtn.addEventListener("click", () => {
 });
 
 // Comments section functions below:
-import { validateTextInput } from "./export-functions/validateForm.js";
+import { validateTextInputLength } from "./export-functions/validateForm.js";
 import { validateAllInputs } from "./export-functions/validateForm.js";
 
 const nameInput = document.querySelector("#name");
@@ -37,8 +37,10 @@ const commentInput = document.querySelector("#custom-comment");
 const allFormInputs = document.querySelector("fieldset").elements;
 const submitCommentBtn = document.querySelector(".submit-comment");
 
-nameInput.onkeyup = (e) => {validateTextInput(nameInput, 3),  validateAllInputs(allFormInputs, submitCommentBtn)};
-commentInput.onkeyup = (e) => {validateTextInput(commentInput, 15), validateAllInputs(allFormInputs, submitCommentBtn)};
+commentInput.textContent = "";
+
+nameInput.onkeyup = (e) => {validateTextInputLength(nameInput, 3, 15),  validateAllInputs(allFormInputs, submitCommentBtn)};
+commentInput.onkeyup = (e) => {validateTextInputLength(commentInput, 15, 250), validateAllInputs(allFormInputs, submitCommentBtn)};
 
 submitCommentBtn.onclick = (e) => {
   e.preventDefault();
