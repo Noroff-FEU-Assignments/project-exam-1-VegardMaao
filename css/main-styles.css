@@ -170,6 +170,10 @@ main{
     padding: 7px 14px;
 }
 
+.submit{
+    display: block;
+}
+
 .broswebtn{
     margin: 0px 50px;
     padding: 7px 14px;
