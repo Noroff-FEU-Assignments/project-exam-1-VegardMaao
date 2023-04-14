@@ -1,8 +1,11 @@
-
 // Post creation functions
 
-import { createPost } from "../js/export-functions/createSinglePost.js";
-import { makeArray } from "../js/export-functions/nextAndPreviousPost.js";
+import {
+  createPost
+} from "../js/export-functions/createSinglePost.js";
+import {
+  makeArray
+} from "../js/export-functions/nextAndPreviousPost.js";
 
 const postContainer = document.querySelector(".single-post");
 const queryString = document.location.search;
@@ -31,26 +34,38 @@ nextBtn.addEventListener("click", () => {
 // Comments section functions below:
 import { validateTextInputLength } from "./export-functions/validateForm.js";
 import { validateAllInputs } from "./export-functions/validateForm.js";
+import { getComments } from "./export-functions/getComments.js";
+import { submitForm } from "./export-functions/submitForm.js";
 
+const commentsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments`;
+
+const idInput = document.querySelector("#post-ID");
 const nameInput = document.querySelector("#name");
+const emailInput = document.querySelector("#email");
 const commentInput = document.querySelector("#custom-comment");
 const allFormInputs = document.querySelector("fieldset").elements;
 const submitCommentBtn = document.querySelector(".submit");
 
+idInput.value = `${id}`;
 commentInput.textContent = "";
 
-nameInput.onkeyup = (e) => {validateTextInputLength(nameInput, 3, 15),  validateAllInputs(allFormInputs, submitCommentBtn)};
-commentInput.onkeyup = (e) => {validateTextInputLength(commentInput, 15, 250), validateAllInputs(allFormInputs, submitCommentBtn)};
+nameInput.onkeyup = (e) => {
+  validateTextInputLength(nameInput, 3, 15), validateAllInputs(allFormInputs, submitCommentBtn)
+};
+//Email input needs regex
+emailInput.onkeyup = (e) => {
+  validateTextInputLength(emailInput, 3, 50), validateAllInputs(allFormInputs, submitCommentBtn)
+};
+//Email input needs regex
+commentInput.onkeyup = (e) => {
+  validateTextInputLength(commentInput, 15, 250), validateAllInputs(allFormInputs, submitCommentBtn)
+};
 
 submitCommentBtn.onclick = (e) => {
-  e.preventDefault();
-  console.log("button press");
+  submitForm(e, allFormInputs, commentsUrl);
 }
-
-import { getComments } from "./export-functions/getComments.js";
 
 const commentsContainer = document.querySelector(".all-comments-on-post");
 const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?post=${id}`;
 
-getComments(commentsContainer,apiCommentUrl);
-
+getComments(commentsContainer, apiCommentUrl);

@@ -56,14 +56,18 @@
         <section class="comment-section">
             <form action="submit">
                 <fieldset class="enter-comment">
+                    <input type="hidden" name="post" id="post-ID">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Full Name" required>
+                    <input type="text" name="author_name" id="name" placeholder="Full Name" required>
+                    <p class="error-message"></p>
+                    <label for="email">Your email</label>
+                    <input type="email" name="author_email" id="email" placeholder="your@email.com">
                     <p class="error-message"></p>
                     <label for="custom-comment">Leave a comment</label>
-                    <textarea name="custom-comment" id="custom-comment" cols="30" rows="10" required
+                    <textarea name="content" id="custom-comment" cols="30" rows="10" required
                         placeholder="This does not work yet. It's only here for 'scaffolfing' at the moment">
                 </textarea>
-                <p class="error-message"></p>
+                    <p class="error-message"></p>
                 </fieldset>
                 <button disabled="true" class="submit">Submit comment</button>
             </form>

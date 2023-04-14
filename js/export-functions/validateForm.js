@@ -23,8 +23,8 @@ export function validateTextInputLength(input, minLength, maxLength) {
 export function validateAllInputs(inputs, btn) {
     let arrayOfBooleans = [];
     for (let i = 0; i < inputs.length; i++) {
-        let input = inputs[i];
-        arrayOfBooleans.push(input.validity.valid);
+        let singleInput = inputs[i];
+        arrayOfBooleans.push(singleInput.validity.valid);
         let checker = arrayOfBooleans.every(Boolean);
         if (checker === true) {
             btn.disabled = false;
