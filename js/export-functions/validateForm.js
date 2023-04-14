@@ -19,6 +19,10 @@ export function validateTextInputLength(input, minLength, maxLength) {
     }
 };
 
+export function wordCounter(input, maxLength) {
+    //I want to make a word counter for my textareas, kind of like what twitter does
+    //I'll get back to it later 
+}
 
 export function validateAllInputs(inputs, btn) {
     let arrayOfBooleans = [];
