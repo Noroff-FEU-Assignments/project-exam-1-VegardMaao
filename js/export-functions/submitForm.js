@@ -1,6 +1,5 @@
 export async function submitForm(e, inputs, url) {
     e.preventDefault();
-    console.log("button press");
     let arrayOfInputValues = [];
     let arrayOfKeys = [];
     let dataObject = {};
@@ -13,9 +12,7 @@ export async function submitForm(e, inputs, url) {
     for (let x = 0; x < arrayOfKeys.length; x++) {
         dataObject[arrayOfKeys[x]] = arrayOfInputValues[x];
     }
-    
     console.log("array of keys", arrayOfKeys);
-    console.log("array of values ", arrayOfInputValues);   
+    console.log("array of values ", arrayOfInputValues);
     console.log(dataObject);
-
 }
