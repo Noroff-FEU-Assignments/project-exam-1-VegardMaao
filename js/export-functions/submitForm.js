@@ -7,10 +7,7 @@ export async function submitForm(e, inputs, url) {
         const singleInput = inputs[i];
         arrayOfKeys.push(singleInput.name);
         arrayOfInputValues.push(singleInput.value);
-    }
-
-    for (let x = 0; x < arrayOfKeys.length; x++) {
-        dataObject[arrayOfKeys[x]] = arrayOfInputValues[x];
+        dataObject[arrayOfKeys[i]] = arrayOfInputValues[i];
     }
     console.log("array of keys", arrayOfKeys);
     console.log("array of values ", arrayOfInputValues);
