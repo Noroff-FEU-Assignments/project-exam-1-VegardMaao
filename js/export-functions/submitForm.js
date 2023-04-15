@@ -2,9 +2,7 @@ export async function submitForm(e, inputs, url) {
     e.preventDefault();
     // let arrayOfInputValues = [];
     // let arrayOfKeys = [];
-    let dataObject = {
-        1: "asasdasdasd"
-    };
+    let dataObject = {};
     for (let i = 0; i < inputs.length; i++) {
         const singleInput = inputs[i];
         // arrayOfKeys.push(singleInput.name);
