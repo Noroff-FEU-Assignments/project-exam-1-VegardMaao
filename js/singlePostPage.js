@@ -38,7 +38,8 @@ import { getComments } from "./export-functions/getComments.js";
 import { submitForm } from "./export-functions/submitForm.js";
 
 const commentsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments`;
-
+const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?post=${id}`;
+const commentsContainer = document.querySelector(".all-comments-on-post");
 const idInput = document.querySelector("#post-ID");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
@@ -62,10 +63,7 @@ commentInput.onkeyup = (e) => {
 };
 
 submitCommentBtn.onclick = (e) => {
-  submitForm(e, allFormInputs, commentsUrl);
-}
-
-const commentsContainer = document.querySelector(".all-comments-on-post");
-const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?post=${id}`;
+  submitForm(e, allFormInputs, commentsUrl)
+};
 
 getComments(commentsContainer, apiCommentUrl);

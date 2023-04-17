@@ -17,5 +17,5 @@ export async function submitForm(e, inputs, url) {
         },
         body: dataJSON,
     })
-    return response.JSON();
+    return;
 }

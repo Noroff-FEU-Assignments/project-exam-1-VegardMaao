@@ -1,10 +1,14 @@
-export async function getComments(conatiner, url) {
+export async function getComments(container, url) {
+    container.innerHTML ="";
+    container.classList.add("loader");
     const commentsResponse = await fetch(url);
     const commentsFinishedResponse = await commentsResponse.json();
-    createCommentsHTML(conatiner, commentsFinishedResponse);
+    console.log(commentsFinishedResponse);
+    createCommentsHTML(container, commentsFinishedResponse);
 };
 
 function createCommentsHTML(container, array) {
+    container.classList.remove("loader");
     for (let i = 0; i < array.length; i++) {
 
         let postedDate = array[i].date;
