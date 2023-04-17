@@ -10,12 +10,16 @@ export async function submitForm(e, inputs, url) {
     const dataJSON = JSON.stringify(dataObject);
     console.log(dataJSON);
 
-    await fetch(url, {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: dataJSON,
-    })
-    return;
+    try {
+        await fetch(url, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: dataJSON,
+        })
+        return;
+    } catch (error) {
+        console.log(error);
+    }
 }
