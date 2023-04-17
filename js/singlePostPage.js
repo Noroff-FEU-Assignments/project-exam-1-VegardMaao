@@ -37,8 +37,6 @@ import { validateAllInputs } from "./export-functions/validateForm.js";
 import { getComments } from "./export-functions/getComments.js";
 import { submitForm } from "./export-functions/submitForm.js";
 
-const commentsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments`;
-const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?post=${id}`;
 const commentsContainer = document.querySelector(".all-comments-on-post");
 const idInput = document.querySelector("#post-ID");
 const nameInput = document.querySelector("#name");
@@ -46,6 +44,9 @@ const emailInput = document.querySelector("#email");
 const commentInput = document.querySelector("#custom-comment");
 const allFormInputs = document.querySelector("fieldset").elements;
 const submitCommentBtn = document.querySelector(".submit");
+let count = 1;
+const commentsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments`;
+const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?post=${id}&per_page=20&page=${count}`;
 
 idInput.value = `${id}`;
 commentInput.textContent = "";
@@ -62,8 +63,14 @@ commentInput.onkeyup = (e) => {
   validateTextInputLength(commentInput, 15, 250), validateAllInputs(allFormInputs, submitCommentBtn)
 };
 
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(getComments(commentsContainer, apiCommentUrl))
+  }, 5000);
+})
+
 submitCommentBtn.onclick = (e) => {
-  submitForm(e, allFormInputs, commentsUrl)
+  submitForm(e, allFormInputs, commentsUrl), myPromise
 };
 
 getComments(commentsContainer, apiCommentUrl);
