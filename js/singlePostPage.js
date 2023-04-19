@@ -42,6 +42,7 @@ const idInput = document.querySelector("#post-ID");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const commentInput = document.querySelector("#custom-comment");
+const fieldsetField = document.querySelector("form");
 const allFormInputs = document.querySelector("fieldset").elements;
 const submitCommentBtn = document.querySelector(".submit");
 let count = 1;
@@ -63,14 +64,16 @@ commentInput.onkeyup = (e) => {
   validateTextInputLength(commentInput, 15, 250), validateAllInputs(allFormInputs, submitCommentBtn)
 };
 
-const myPromise = new Promise((resolve, reject) => {
+function refreshComments(container) {
+  container.innerHTML ="";
+  container.classList.add("loader");
   setTimeout(() => {
-    resolve(getComments(commentsContainer, apiCommentUrl))
+    getComments(container, apiCommentUrl)
   }, 5000);
-})
+}
 
 submitCommentBtn.onclick = (e) => {
-  submitForm(e, allFormInputs, commentsUrl), myPromise
+  submitForm(e, allFormInputs, commentsUrl, fieldsetField), refreshComments(commentsContainer)
 };
 
 getComments(commentsContainer, apiCommentUrl);

@@ -1,6 +1,4 @@
 export async function getComments(container, url) {
-    container.innerHTML ="";
-    container.classList.add("loader");
     const commentsResponse = await fetch(url);
     const commentsFinishedResponse = await commentsResponse.json();
     console.log(commentsFinishedResponse);
