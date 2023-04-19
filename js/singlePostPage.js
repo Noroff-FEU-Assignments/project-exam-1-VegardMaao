@@ -45,6 +45,7 @@ const commentInput = document.querySelector("#custom-comment");
 const fieldsetField = document.querySelector("form");
 const allFormInputs = document.querySelector("fieldset").elements;
 const submitCommentBtn = document.querySelector(".submit");
+const message = `<p>Your comment is posted!</p>`;
 let count = 1;
 const commentsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments`;
 const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?post=${id}&per_page=20&page=${count}`;
@@ -73,7 +74,7 @@ function refreshComments(container) {
 }
 
 submitCommentBtn.onclick = (e) => {
-  submitForm(e, allFormInputs, commentsUrl, fieldsetField), refreshComments(commentsContainer)
+  submitForm(e, allFormInputs, commentsUrl, fieldsetField, message), refreshComments(commentsContainer)
 };
 
 getComments(commentsContainer, apiCommentUrl);

@@ -1,4 +1,4 @@
-export async function submitForm(e, inputs, url, container) {
+export async function submitForm(e, inputs, url, container, message) {
     e.preventDefault();
     let dataObject = {};
     for (let i = 0; i < inputs.length; i++) {
@@ -7,7 +7,7 @@ export async function submitForm(e, inputs, url, container) {
     }    
     const dataJSON = JSON.stringify(dataObject);
     try {
-        container.innerHTML = `<div class="comment-posted"><p>Your comment is posted!</p></div>`;
+        container.innerHTML = `<div class="comment-posted">${message}</div>`;
         await fetch(url, {
             method: "post",
             headers: {
