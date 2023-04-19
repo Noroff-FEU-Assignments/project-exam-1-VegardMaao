@@ -7,6 +7,7 @@ export async function submitForm(e, inputs, url, container) {
     }    
     const dataJSON = JSON.stringify(dataObject);
     try {
+        container.innerHTML = `<div class="comment-posted"><p>Your comment is posted!</p></div>`;
         await fetch(url, {
             method: "post",
             headers: {
@@ -14,7 +15,6 @@ export async function submitForm(e, inputs, url, container) {
             },
             body: dataJSON,
         })
-        container.innerHTML = `<div class="comment-posted"><p>Your comment is posted!</p></div>`;
         return;
     } catch (error) {
         console.log(error);
