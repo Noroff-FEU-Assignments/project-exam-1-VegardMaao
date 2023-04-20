@@ -49,6 +49,7 @@ const message = `<p>Your comment is posted!</p>`;
 let count = 1;
 const commentsUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments`;
 const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?post=${id}&per_page=20&page=${count}`;
+const contentType = `application/json`;
 
 idInput.value = `${id}`;
 commentInput.textContent = "";
@@ -74,7 +75,7 @@ function refreshComments(container) {
 }
 
 submitCommentBtn.onclick = (e) => {
-  submitForm(e, allFormInputs, commentsUrl, fieldsetField, message), refreshComments(commentsContainer)
+  submitForm(e, allFormInputs, commentsUrl, fieldsetField, message, contentType), refreshComments(commentsContainer)
 };
 
 getComments(commentsContainer, apiCommentUrl);
