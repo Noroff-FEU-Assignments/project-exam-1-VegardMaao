@@ -62,10 +62,12 @@ figure > img{
         transform: scale(1);
     }
 }
+
 .modal img {
-    width: 50%;
+    height: 50%;
     object-fit: cover;
 }
+
 
 /* Comment section */
 
@@ -94,4 +96,12 @@ textarea{
 .single-comment{
     width: 90%;
 
+}
+
+@media (min-width: 600px) {
+    .modal img {
+        width: 50%;
+        height: 100%;
+    }
+    
 }
