@@ -1,11 +1,7 @@
 // Post creation functions
 
-import {
-  createPost
-} from "../js/export-functions/createSinglePost.js";
-import {
-  makeArray
-} from "../js/export-functions/nextAndPreviousPost.js";
+import { createPost } from "../js/export-functions/createSinglePost.js";
+import { makeArray } from "../js/export-functions/nextAndPreviousPost.js";
 
 const postContainer = document.querySelector(".single-post");
 const queryString = document.location.search;
@@ -29,6 +25,14 @@ prevBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
   makeArray(apiAllPostsUrl, nextBtn, id);
+});
+
+// Image modal functions here
+
+import { imgSrc } from "./export-functions/imageModals.js";
+
+postContainer.addEventListener("DOMSubtreeModified", (e) => {
+  imgSrc();
 });
 
 // Comments section functions below:

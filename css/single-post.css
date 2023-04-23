@@ -39,6 +39,34 @@ figure > img{
     object-fit: contain;
 }
 
+/* Image modals */
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.733);
+    margin-top: -1px;
+    animation: zoom 0.3s ease-in-out;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+.modal img {
+    width: 50%;
+    object-fit: cover;
+}
+
 /* Comment section */
 
 .enter-comment{
@@ -57,3 +85,13 @@ textarea{
     min-width: 70%;
 }
 
+.all-comments-on-post{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.single-comment{
+    width: 90%;
+
+}

@@ -187,6 +187,10 @@ main{
     border: none;
 }
 
+.link-on-thumbnail{
+    text-decoration: none;
+}
+
 .read-more{
     padding: 5px 10px;
 }

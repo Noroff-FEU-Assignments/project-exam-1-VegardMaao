@@ -8,7 +8,9 @@ export function createHTML(container, array) {
             <a class="link-on-thumbnail" href="singleblogpost.html?id=${array[i].id}">
             <img class="featured_img_thumbnail" src="${array[i]._embedded['wp:featuredmedia']['0'].source_url}" alt="${array[i]._embedded['wp:featuredmedia']['0'].alt_text}" title="${array[i]._embedded['wp:featuredmedia']['0'].alt_text}">
             </a>
+            <a class="link-on-thumbnail" href="singleblogpost.html?id=${array[i].id}">
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
+            </a>
             ${array[i].excerpt.rendered}
             <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read more</a>
             </div>
@@ -17,7 +19,9 @@ export function createHTML(container, array) {
             container.innerHTML += `
             <div class="single-post-in-list">
             <span class="link-on-thumbnail"></span>
+            <a class="link-on-thumbnail" href="singleblogpost.html?id=${array[i].id}">
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
+            </a>
             ${array[i].excerpt.rendered}
             <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read more</a>
             </div>

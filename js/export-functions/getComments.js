@@ -1,7 +1,6 @@
 export async function getComments(container, url) {
     const commentsResponse = await fetch(url);
     const commentsFinishedResponse = await commentsResponse.json();
-    console.log(commentsFinishedResponse);
     createCommentsHTML(container, commentsFinishedResponse);
 };
 
