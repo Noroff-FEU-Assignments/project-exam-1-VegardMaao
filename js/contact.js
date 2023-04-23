@@ -16,9 +16,7 @@ const contentType = `multipart/form-data; boundary=<calculated when request is s
 messageInput.textContent = "";
 
 nameInput.onkeyup = (e) => {validateTextInputLength(nameInput, 3, 15),  validateAllInputs(allFormInputs, submitMessageBtn)};
-//email input needs regEx
 emailInput.onkeyup = (e) => {validateTextInputLength(emailInput, 3, 50),  validateAllInputs(allFormInputs, submitMessageBtn)};
-//email input needs regEx
 subjectInput.onkeyup = (e) => {validateTextInputLength(subjectInput, 3, 25),  validateAllInputs(allFormInputs, submitMessageBtn)};
 messageInput.onkeyup = (e) => {validateTextInputLength(messageInput, 15, 500),  validateAllInputs(allFormInputs, submitMessageBtn)};
 

@@ -62,11 +62,9 @@ commentInput.textContent = "";
 nameInput.onkeyup = (e) => {
   validateTextInputLength(nameInput, 3, 15), validateAllInputs(allFormInputs, submitCommentBtn)
 };
-//Email input needs regex
 emailInput.onkeyup = (e) => {
   validateTextInputLength(emailInput, 3, 50), validateAllInputs(allFormInputs, submitCommentBtn)
 };
-//Email input needs regex
 commentInput.onkeyup = (e) => {
   validateTextInputLength(commentInput, 15, 250), validateAllInputs(allFormInputs, submitCommentBtn)
 };
