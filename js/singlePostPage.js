@@ -35,6 +35,7 @@ postContainer.addEventListener("DOMSubtreeModified", (e) => {
   imgSrc();
 });
 
+
 // Comments section functions below:
 import { validateTextInputLength } from "./export-functions/validateForm.js";
 import { validateAllInputs } from "./export-functions/validateForm.js";

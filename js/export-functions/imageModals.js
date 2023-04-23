@@ -1,3 +1,11 @@
+export function closeModal(modal) {
+    window.onclick = (e) => {
+        if(e.target.contains(modal)){
+            modal.remove();       
+        }
+    }
+}
+
 function imgModal(imgSrc) {
     const modal = document.createElement("div");
     modal.setAttribute("class", "modal");
@@ -5,6 +13,7 @@ function imgModal(imgSrc) {
     const bigImage = document.createElement("img");
     bigImage.setAttribute("src", imgSrc);
     modal.append(bigImage);
+    closeModal(modal);
 };
 
 export function imgSrc() {
@@ -16,8 +25,8 @@ export function imgSrc() {
         let img = images[i];
         let imgSrc = images[i].src;
         img.addEventListener("click", (e) => {
-            console.log(imgSrc);
             imgModal(imgSrc);
         })
     }
 }
+
