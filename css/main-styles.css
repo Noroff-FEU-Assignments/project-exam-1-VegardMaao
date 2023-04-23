@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-a, p, li, label{
+a, p, li, label, button{
     font-family: var(--regular-fonts);
     font-size: 1.2rem;
     color: var(--text-color);
@@ -236,6 +236,19 @@ main{
     }
 }
 
+/* BUTTONS  */
+
+.submit{
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px auto 10px auto;
+}
+
+.submit:disabled{
+    color: #14213d3f;
+}
 
 /* THIS IS FOR THE FOOTER */
 footer{

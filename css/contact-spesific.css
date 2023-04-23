@@ -1,3 +1,8 @@
+.contact-us > div {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
 form {
     border: 2px solid black;
     border-radius: 15px;
