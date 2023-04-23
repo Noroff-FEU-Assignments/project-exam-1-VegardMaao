@@ -104,6 +104,10 @@
     max-width: 500px;
 }
 
+.about-and-contact:last-of-type{
+    margin-bottom: 30px;
+}
+
  
 @media (min-width: 600px) {
     .newest-posts{

@@ -16,7 +16,7 @@ export async function createPost(container, url, btn1, btn2) {
     const productResponse = await fetch(url);
     const postInfo = await productResponse.json();
     
-    if (document.title !== "Home - Loppas Big Blog" && document.title !== "About - Loppas Big Blog" ) {
+    if (document.title !== "Home - Loppas Big Blog" ) {
         findPlaceInArray(postInfo, btn1, btn2);
         document.title = postInfo.title.rendered + " - Loppas Big Blog";
         document.querySelector('meta[name="description"]').setAttribute("content", postInfo.excerpt.rendered);
