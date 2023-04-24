@@ -12,7 +12,7 @@ export function createHTML(container, array) {
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
             </a>
             ${array[i].excerpt.rendered}
-            <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read more</a>
+            <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read post</a>
             </div>
             `;
         } else {
@@ -23,7 +23,7 @@ export function createHTML(container, array) {
             <h3 class="preview-header"> ${array[i].title.rendered}</h3>
             </a>
             ${array[i].excerpt.rendered}
-            <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read more</a>
+            <a class="read-more secondary-cta-btn" href="singleblogpost.html?id=${array[i].id}">Read post</a>
             </div>
             `;
         }
