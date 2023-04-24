@@ -11,7 +11,6 @@ const messageInput = document.querySelector("#your-message");
 const submitMessageBtn = document.querySelector(".submit");
 const message = `<p>Your message has been sent!</p>`;
 const contactURL = `https://sellmo.no/Flower_Power/wp-json/contact-form-7/v1/contact-forms/311/feedback`;
-const contentType = `multipart/form-data; boundary=<calculated when request is sent>`;
 
 messageInput.textContent = "";
 
@@ -21,5 +20,5 @@ subjectInput.onkeyup = (e) => {validateTextInputLength(subjectInput, 3, 25),  va
 messageInput.onkeyup = (e) => {validateTextInputLength(messageInput, 15, 500),  validateAllInputs(allFormInputs, submitMessageBtn)};
 
 submitMessageBtn.onclick = (e) => {
-    submitForm(e, allFormInputs, contactURL, formField, message, contentType);
+    submitForm(e, formField, contactURL, formField, message);
   }
