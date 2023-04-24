@@ -1,6 +1,9 @@
+const body = document.querySelector("body");
+
 export function closeModal(modal) {
     window.onclick = (e) => {
         if(e.target.contains(modal)){
+            body.style.cssText = "cursor: auto;";
             modal.remove();       
         }
     }
@@ -13,6 +16,7 @@ function imgModal(imgSrc) {
     const bigImage = document.createElement("img");
     bigImage.setAttribute("src", imgSrc);
     modal.append(bigImage);
+    body.style.cssText = "cursor: pointer;";
     closeModal(modal);
 };
 

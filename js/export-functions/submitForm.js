@@ -8,9 +8,8 @@ export async function submitForm(e, inputs, url, container, message) {
             body: dataInFormDataFormat
         })
         const finishedResponse = await fetchResponse.json();
-        console.log(finishedResponse);
         return finishedResponse;
     } catch (error) {
-        console.log(error);
+        container.innerHTML = `<div class="comment-posted">Hmm, something went wrong. It's ${error}</div>`;
     }
 }
