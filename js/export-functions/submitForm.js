@@ -10,7 +10,7 @@ export async function submitForm(e, inputs, url, container, message, contentType
     console.log(dataJSON);
     try {
         container.innerHTML = `<div class="comment-posted">${message}</div>`;
-        await fetch(url, {
+        const fetchResponse = await fetch(url, {
             method: "post",
             headers: {
                 "Content-Type": `${contentType}`,
@@ -22,7 +22,9 @@ export async function submitForm(e, inputs, url, container, message, contentType
             },
             body: dataJSON
         })
-        return;
+        const finishedResponse = await fetchResponse.json();
+        console.log(finishedResponse);
+        return finishedResponse;
     } catch (error) {
         console.log(error);
     }
