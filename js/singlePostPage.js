@@ -81,3 +81,6 @@ submitCommentBtn.onclick = (e) => {
 };
 
 getComments(commentsContainer, apiCommentUrl);
+
+// Sort and filter below
+
