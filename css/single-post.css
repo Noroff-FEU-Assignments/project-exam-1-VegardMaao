@@ -53,9 +53,9 @@ img:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.733);
+    background-color: #00000050;
     margin-top: -1px;
-    animation: zoom 0.3s ease-in-out;
+    animation: zoom 0.4s ease-in-out;
 }
 
 @keyframes zoom {

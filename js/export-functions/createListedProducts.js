@@ -1,7 +1,6 @@
 export function createHTML(container, array) {
     container.innerHTML = "";
     for (let i = 0; i < array.length; i++) {
-        const singlePost = array[i];
         if (array[i].featured_media) {
             container.innerHTML += `
             <div class="single-post-in-list">
@@ -30,10 +29,25 @@ export function createHTML(container, array) {
     }
 }
 
-export async function getArray(container, url, btn, count) {
+export async function getArray(container, url, btn, count, state) {
+    
     let response = await fetch(url);
     let finishedResponse = await response.json();
-    if (finishedResponse.data  && document.title === "Home - Loppas Big Blog") {
+
+    if (state === "oldest-posts"){
+        const sortedByOldest = finishedResponse.reverse();
+        const slicedOldest = sortedByOldest.slice(0, count);
+        manageArray(container, slicedOldest, finishedResponse, btn, count);
+    } else {
+        let standardSort = finishedResponse.slice(0, count);
+        manageArray(container, standardSort, finishedResponse, btn, count);
+    }
+};
+
+
+function manageArray(container, array, maxLength, btn, count) {
+
+    if (array.data  && document.title === "Home - Loppas Big Blog") {
         container.classList.remove("loader");
         btn.disabled = true;
         container.innerHTML = `
@@ -45,20 +59,20 @@ export async function getArray(container, url, btn, count) {
                 <a href="blogposts.html" class="secondary-cta-btn">Overview page</a>
                 </div>
               `;
-    } else if (count >= finishedResponse.length && document.title === "Overview - Loppas Big Blog") {
+    } else if (count >= maxLength.length && document.title === "Overview - Loppas Big Blog") {
         container.classList.remove("loader");
-        createHTML(container, finishedResponse);
+        createHTML(container, array);
         btn.disabled = true;
         container.innerHTML += `
                 <div class="no-more-posts">
                 <h3 class="preview-header">No more posts</h3>
-                <p class="regular-text">You've reached bedrock buddy. Let's get back up. You can use the filters to find what you are looking for by the way!</p>
+                <p class="regular-text">You've reached bedrock buddy. Let's get back up</p>
                 <a href="blogposts.html#beginning" class="secondary-cta-btn">Take me up top</a>
                 </div>
               `;
     } else {
         container.classList.remove("loader");
         btn.disabled = false;
-        createHTML(container, finishedResponse);
+        createHTML(container, array);
     }
-};
+}

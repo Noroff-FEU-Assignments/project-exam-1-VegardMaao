@@ -1,19 +1,29 @@
-import { getArray } from "/js/export-functions/createListedProducts.js";    
+import { getArray} from "/js/export-functions/createListedProducts.js";
 
 let count = 10;
 const domElement = document.querySelector(".newest-posts");
-let apiUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?_embed&`;
+const apiUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/posts?_embed&per_page=100`;
 
-let moreBtn = document.querySelector("#more");
+const moreBtn = document.querySelector("#more");
+const selectInp = document.querySelector("#sort-by");
+
+selectInp.addEventListener("change", (e) => {
+        count = 10;
+        domElement.innerHTML = "";
+        domElement.classList.add("loader");
+        console.log(selectInp.value);
+        setTimeout(() => {
+                getArray(domElement, apiUrl, moreBtn, count, selectInp.value);
+        }, 500);
+})
 
 moreBtn.addEventListener("click", () => {
         count = count + 10;
-        let newUrl = `${apiUrl}per_page=${count}&page=1`;
-        getArray(domElement, newUrl, moreBtn, count);    
+        getArray(domElement, apiUrl, moreBtn, count, selectInp.value);
 });
 
 
 
 setTimeout(() => {
-        getArray(domElement, apiUrl, moreBtn);
-      }, 850);
+        getArray(domElement, apiUrl, moreBtn, count);
+}, 850);
