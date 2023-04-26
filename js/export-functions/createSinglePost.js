@@ -3,9 +3,9 @@ async function findPlaceInArray(item, btn1, btn2) {
     const finishedResponse = await response.json();
     for (let i = 0; i < finishedResponse.length; i++) {
         if (finishedResponse[i].id === item.id) {
-            if(i === 0){
+            if (i === 0) {
                 btn1.disabled = true;
-            } else if (i === finishedResponse.length -1) {
+            } else if (i === finishedResponse.length - 1) {
                 btn2.disabled = true;
             }
         }
@@ -15,15 +15,15 @@ async function findPlaceInArray(item, btn1, btn2) {
 export async function createPost(container, url, btn1, btn2) {
     const productResponse = await fetch(url);
     const postInfo = await productResponse.json();
-    
-    if (document.title !== "Home - Loppas Big Blog" ) {
+
+    if (document.title !== "Home - Loppas Big Blog") {
         findPlaceInArray(postInfo, btn1, btn2);
         document.title = postInfo.title.rendered + " - Loppas Big Blog";
         document.querySelector('meta[name="description"]').setAttribute("content", postInfo.excerpt.rendered);
     }
 
     if (postInfo._embedded) {
-        
+
 
         if (postInfo._embedded['wp:featuredmedia']) {
             let postedDate = postInfo.date;

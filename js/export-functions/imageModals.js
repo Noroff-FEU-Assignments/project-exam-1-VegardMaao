@@ -2,9 +2,9 @@ const body = document.querySelector("body");
 
 export function closeModal(modal) {
     window.onclick = (e) => {
-        if(e.target.contains(modal)){
+        if (e.target.contains(modal)) {
             body.style.cssText = "cursor: auto;";
-            modal.remove();       
+            modal.remove();
         }
     }
 }
@@ -33,4 +33,3 @@ export function imgSrc() {
         })
     }
 }
-

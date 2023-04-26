@@ -1,6 +1,4 @@
-import {
-    getArray
-} from "/js/export-functions/createListedProducts.js";
+import { getArray } from "/js/export-functions/createListedProducts.js";
 
 let count = 1;
 const domElement = document.querySelector(".newest-posts");
@@ -38,4 +36,4 @@ forthBtn.addEventListener("click", () => {
 
 setTimeout(() => {
     getArray(domElement, apiUrl, forthBtn);
-  }, 850);
+}, 850);

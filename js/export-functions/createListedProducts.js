@@ -30,11 +30,11 @@ export function createHTML(container, array) {
 }
 
 export async function getArray(container, url, btn, count, state) {
-    
+
     let response = await fetch(url);
     let finishedResponse = await response.json();
 
-    if (state === "oldest-posts"){
+    if (state === "oldest-posts") {
         const sortedByOldest = finishedResponse.reverse();
         const slicedOldest = sortedByOldest.slice(0, count);
         manageArray(container, slicedOldest, finishedResponse, btn, count);
@@ -47,7 +47,7 @@ export async function getArray(container, url, btn, count, state) {
 
 function manageArray(container, array, maxLength, btn, count) {
 
-    if (array.data  && document.title === "Home - Loppas Big Blog") {
+    if (array.data && document.title === "Home - Loppas Big Blog") {
         container.classList.remove("loader");
         btn.disabled = true;
         container.innerHTML = `
