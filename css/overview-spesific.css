@@ -13,6 +13,10 @@
     margin: auto;
 }
 
+.preview-header{
+    margin: 0px;
+}
+
 .featured_img_thumbnail{
     object-fit: cover;
     height: 150px;
