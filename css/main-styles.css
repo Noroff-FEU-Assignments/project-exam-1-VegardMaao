@@ -63,6 +63,7 @@ header > a{
     height: 100%;
     background-color: var(--logo-color);
     padding: 3px;
+    max-width: 60px;
     border-radius: 10px;
 }
 
