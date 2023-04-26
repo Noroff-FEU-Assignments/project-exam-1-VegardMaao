@@ -39,6 +39,9 @@ postContainer.addEventListener("DOMSubtreeModified", (e) => {
 // Comments section functions below:
 import { validateTextInputLength } from "./export-functions/validateForm.js";
 import { validateAllInputs } from "./export-functions/validateForm.js";
+
+import { emailRegExTest } from "./export-functions/validateForm.js";
+
 import { getComments } from "./export-functions/getComments.js";
 import { submitForm } from "./export-functions/submitForm.js";
 
@@ -62,7 +65,7 @@ nameInput.onkeyup = (e) => {
   validateTextInputLength(nameInput, 5, 15), validateAllInputs(allFormInputs, submitCommentBtn)
 };
 emailInput.onkeyup = (e) => {
-  validateTextInputLength(emailInput, 3, 50), validateAllInputs(allFormInputs, submitCommentBtn)
+  validateTextInputLength(emailInput, 3, 50), emailRegExTest(emailInput), validateAllInputs(allFormInputs, submitCommentBtn)
 };
 commentInput.onkeyup = (e) => {
   validateTextInputLength(commentInput, 25, 250), validateAllInputs(allFormInputs, submitCommentBtn)

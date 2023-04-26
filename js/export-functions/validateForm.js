@@ -19,9 +19,17 @@ export function validateTextInputLength(input, minLength, maxLength) {
     }
 };
 
-export function wordCounter(input, maxLength) {
-    //I want to make a word counter for my textareas, kind of like what twitter does
-    //I'll get back to it later 
+export function emailRegExTest(emailInput) {
+    const mailValue = emailInput.value;
+    const emailRegEx = new RegExp(/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/);
+    const test = emailRegEx.test(mailValue);
+    if (test === true) {
+        emailInput.classList.remove("invalid");
+        emailInput.classList.add("valid");
+    } else {
+        emailInput.classList.remove("valid");
+        emailInput.classList.add("invalid");
+    }
 }
 
 export function validateAllInputs(inputs, btn) {
@@ -36,4 +44,10 @@ export function validateAllInputs(inputs, btn) {
             btn.disabled = true;
         }
     }
+}
+
+
+export function wordCounter(input, maxLength) {
+    //I want to make a word counter for my textareas, kind of like what twitter does
+    //I'll get back to it later 
 }
