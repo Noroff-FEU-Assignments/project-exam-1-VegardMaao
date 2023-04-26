@@ -10,7 +10,7 @@ section{
 .featured-picture{
     margin: auto;
     max-width: 650px;
-    width: 80%;
+    width: 80vw;
     border-radius: 10px;
     border: 2px solid var(--text-color);
     object-fit: cover;
