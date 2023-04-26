@@ -1,4 +1,5 @@
 import { validateTextInputLength } from "./export-functions/validateForm.js";
+import { emailRegExTest } from "./export-functions/validateForm.js";
 import { validateAllInputs } from "./export-functions/validateForm.js";
 import { submitForm } from "./export-functions/submitForm.js";
 
@@ -15,7 +16,7 @@ const contactURL = `https://sellmo.no/Flower_Power/wp-json/contact-form-7/v1/con
 messageInput.textContent = "";
 
 nameInput.onkeyup = (e) => {validateTextInputLength(nameInput, 5, 15),  validateAllInputs(allFormInputs, submitMessageBtn)};
-emailInput.onkeyup = (e) => {validateTextInputLength(emailInput, 3, 50),  validateAllInputs(allFormInputs, submitMessageBtn)};
+emailInput.onkeyup = (e) => {validateTextInputLength(emailInput, 3, 50), emailRegExTest(emailInput), validateAllInputs(allFormInputs, submitMessageBtn)};
 subjectInput.onkeyup = (e) => {validateTextInputLength(subjectInput, 15, 25),  validateAllInputs(allFormInputs, submitMessageBtn)};
 messageInput.onkeyup = (e) => {validateTextInputLength(messageInput, 25, 500),  validateAllInputs(allFormInputs, submitMessageBtn)};
 
