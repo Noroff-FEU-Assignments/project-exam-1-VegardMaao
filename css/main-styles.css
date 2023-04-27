@@ -36,6 +36,10 @@ a, p, li, label, button{
     font-weight: 500;
 }
 
+p{
+    line-height: 1.5;
+}
+
 
 li > a{
     text-decoration: none;
