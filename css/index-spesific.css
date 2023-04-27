@@ -101,6 +101,13 @@
 
 /* Contact and about */
 
+.flexy-box{
+    display: flex;
+    max-width: 900px;
+    margin: 50px auto;
+    flex-direction: column;
+}
+
 .about-and-contact{
     max-width: 500px;
     margin: 30px auto;
@@ -117,5 +124,8 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         place-items: center;
         overflow-y: hidden;
+    }
+    .flexy-box{
+        flex-direction: row;
     }
 }
