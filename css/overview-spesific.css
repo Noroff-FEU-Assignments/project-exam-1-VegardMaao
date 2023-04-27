@@ -1,4 +1,6 @@
-
+.regular-text{
+    text-align: center;
+}
 .overview{
     display: flex;
     flex-direction: column;

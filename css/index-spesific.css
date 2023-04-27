@@ -96,6 +96,7 @@
     margin: 0px auto;
     display: flex;
     justify-content: center;
+    max-width: 100%;
 }
 
 /* Contact and about */

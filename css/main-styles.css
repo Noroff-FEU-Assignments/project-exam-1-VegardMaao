@@ -50,7 +50,7 @@ header{
     height: 50px;
     background-color: var(--primary-color);
     border-bottom: 2px solid black;
-    max-width: 100%;
+    width: 102vw;
 }
 
 header > a{
@@ -65,6 +65,7 @@ header > a{
     background-color: var(--logo-color);
     padding: 3px;
     border-radius: 10px;
+    z-index: 1;
 }
 
 .nav_ul{
@@ -294,7 +295,8 @@ a > i{
     nav{
         display: flex;
         align-items: center;
-        margin-right: 112px;
+        position: absolute;
+        z-index: 0;
     }
 
     .nav_ul{

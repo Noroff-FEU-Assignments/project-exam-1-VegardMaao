@@ -11,7 +11,6 @@ selectInp.addEventListener("change", (e) => {
         count = 10;
         domElement.innerHTML = "";
         domElement.classList.add("loader");
-        console.log(selectInp.value);
         setTimeout(() => {
                 getArray(domElement, apiUrl, moreBtn, count, selectInp.value);
         }, 500);
