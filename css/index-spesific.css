@@ -103,6 +103,7 @@
 
 .about-and-contact{
     max-width: 500px;
+    margin: 30px auto;
 }
 
 .about-and-contact:last-of-type{
