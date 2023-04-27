@@ -22,7 +22,6 @@ export async function makeArray(url, btn, idFromUrl) {
     const id = idFromUrl;
     let response = await fetch(url);
     let finishedResponse = await response.json();
-    console.log(finishedResponse);
     if (btn.id === "next") {
         nextPost(finishedResponse, btn, id);
     } else if (btn.id === "previous") {

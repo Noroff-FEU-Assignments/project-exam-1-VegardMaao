@@ -50,7 +50,6 @@ header{
     height: 50px;
     background-color: var(--primary-color);
     border-bottom: 2px solid black;
-    width: 102vw;
 }
 
 header > a{
@@ -262,6 +261,11 @@ footer{
     flex-direction: column;
     background-color: inherit;
     max-width: 100%;
+}
+
+.cs_ul > li {
+    list-style-type: none;
+    margin: 5px 0px;
 }
 
 a > i{

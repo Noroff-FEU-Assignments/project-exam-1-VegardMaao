@@ -99,8 +99,11 @@ textarea{
 }
 
 .single-comment{
-    width: 90%;
-
+    width: 70%;
+    max-width: 400px;
+    border-bottom: 2px dotted var(--text-color);
+    padding: 40px 10px 0px 10px;
+    overflow-wrap: break-word;
 }
 
 @media (min-width: 600px) {
