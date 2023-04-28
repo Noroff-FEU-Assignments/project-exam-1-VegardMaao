@@ -18,8 +18,11 @@
     margin: auto;
     max-width: 650px;
     width: 80vw;
-    border-radius: 25px;
+    margin: auto 50px;
+    height: 500px;
+    border-radius: 10px;
     border: 2px solid var(--text-color);
+    object-fit: cover;
 }
 
 .intro-info > p{
