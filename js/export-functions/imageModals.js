@@ -23,10 +23,10 @@ function imgModal(imgSrc) {
 export function imgSrc() {
     const images = document.querySelectorAll("img");
     for (let i = 0; i < images.length; i++) {
-        if (i === 0) {
+        let img =  images[i];
+        if (i === 0 || img.classList.contains("featured_img_thumbnail")) {
             continue;
         }
-        let img = images[i];
         let imgSrc = images[i].src;
         img.addEventListener("click", (e) => {
             imgModal(imgSrc);

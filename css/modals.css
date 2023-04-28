@@ -1,0 +1,33 @@
+/* Image modals */
+
+img:hover{
+    cursor: pointer;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000050;
+    margin-top: -1px;
+    animation: zoom 0.4s ease-in-out;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal img {
+    height: 50%;
+    object-fit: cover;
+    cursor: auto;
+}
