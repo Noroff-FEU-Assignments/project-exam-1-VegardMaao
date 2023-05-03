@@ -18,7 +18,6 @@
     margin: auto;
     max-width: 650px;
     width: 80vw;
-    margin: auto 50px;
     height: 500px;
     border-radius: 10px;
     border: 2px solid var(--text-color);
@@ -35,11 +34,15 @@
 
 /* Newest posts scrollable box */ 
 
+.new-posts-go-here{
+    overflow: hidden;
+}
+
 .newest-posts{
     height: 500px;
     border: 2px solid;
     margin: 20px auto;
-    min-width: 100%;
+    min-width: 100vw;
     max-width: 900px;
     display: flex;
     flex-direction: column;
