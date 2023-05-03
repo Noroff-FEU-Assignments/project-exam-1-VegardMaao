@@ -36,7 +36,7 @@
 /* Newest posts scrollable box */ 
 
 .newest-posts{
-    min-height: 500px;
+    height: 500px;
     border: 2px solid;
     margin: 20px auto;
     min-width: 100%;
