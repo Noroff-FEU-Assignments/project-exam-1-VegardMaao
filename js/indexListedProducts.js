@@ -22,10 +22,14 @@ backBtn.addEventListener("click", () => {
     if (count === 1) {
         disableBtn(backBtn);
         let newUrl = `${apiUrl}page=${count}`;
-        getArray(domElement, newUrl, forthBtn);
+        setTimeout(() => {
+            getArray(domElement, newUrl, forthBtn);
+        }, 500);
     } else {
         let newUrl = `${apiUrl}page=${count}`;
-        getArray(domElement, newUrl, forthBtn);
+        setTimeout(() => {
+            getArray(domElement, newUrl, forthBtn);
+        }, 500);
     }
 });
 
@@ -34,7 +38,9 @@ forthBtn.addEventListener("click", () => {
     enableBtn(backBtn);
     count++;
     let newUrl = `${apiUrl}page=${count}`;
-    getArray(domElement, newUrl, forthBtn);
+    setTimeout(() => {
+        getArray(domElement, newUrl, forthBtn);
+    }, 500);
 });
 
 setTimeout(() => {
