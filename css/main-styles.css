@@ -181,9 +181,16 @@ main{
     display: block;
 }
 
+.backandforth{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .broswebtn{
-    margin: 0px 50px;
+    margin: 0px;
     padding: 7px 14px;
+    width: 115px;
     color: var(--text-color);
     font-size: 1.2rem;
     font-weight: 600;
