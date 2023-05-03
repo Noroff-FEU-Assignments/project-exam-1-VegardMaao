@@ -77,7 +77,7 @@
 }
 
 .single-post-in-list > p{
-    height: 75px;
+    height: 115px;
     overflow: hidden;
     margin: 5px auto;
     max-width: 650px;
@@ -125,6 +125,7 @@
     .newest-posts{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        min-width: 0px;
         place-items: center;
         overflow-y: hidden;
     }
