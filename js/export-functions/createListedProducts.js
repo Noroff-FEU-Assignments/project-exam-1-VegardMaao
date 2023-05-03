@@ -34,13 +34,17 @@ export async function getArray(container, url, btn, count, state) {
     let response = await fetch(url);
     let finishedResponse = await response.json();
 
-    if (state === "oldest-posts") {
-        const sortedByOldest = finishedResponse.reverse();
-        const slicedOldest = sortedByOldest.slice(0, count);
-        manageArray(container, slicedOldest, finishedResponse, btn, count);
+    if (document.title === "Home - Loppas Big Blog") {
+        manageArray(container, finishedResponse, finishedResponse, btn, count);
     } else {
-        let standardSort = finishedResponse.slice(0, count);
-        manageArray(container, standardSort, finishedResponse, btn, count);
+        if (state === "oldest-posts") {
+            const sortedByOldest = finishedResponse.reverse();
+            const slicedOldest = sortedByOldest.slice(0, count);
+            manageArray(container, slicedOldest, finishedResponse, btn, count);
+        } else {
+            let standardSort = finishedResponse.slice(0, count);
+            manageArray(container, standardSort, finishedResponse, btn, count);
+        }
     }
 };
 
