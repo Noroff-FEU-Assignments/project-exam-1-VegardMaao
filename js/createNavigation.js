@@ -10,7 +10,7 @@ function createNavigation(container, items) {
   for (let i = 0; i < items.length; i++) {
     container.innerHTML += `
           <li>
-          <a href="${items[i].url}">${items[i].title}</a>
+          <a href="${items[i].url}" target="${items[i].target}">${items[i].title}</a>
           </li>
     `;
   }

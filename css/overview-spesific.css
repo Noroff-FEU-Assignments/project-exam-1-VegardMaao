@@ -59,7 +59,8 @@
     padding: 7px 14px;
     color: var(--text-color);
     font-size: 1.2rem;
-    font-weight: 600
+    font-weight: 600;
+    width: 125px;
 }
 
 .backandforth:disabled{
