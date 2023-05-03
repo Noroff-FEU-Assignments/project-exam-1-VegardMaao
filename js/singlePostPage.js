@@ -41,8 +41,8 @@ import { validateTextInputLength } from "./export-functions/validateForm.js";
 import { validateAllInputs } from "./export-functions/validateForm.js";
 
 import { emailRegExTest } from "./export-functions/validateForm.js";
-
 import { getComments } from "./export-functions/getComments.js";
+import { wordCount } from "./export-functions/characterCounter.js";
 import { submitForm } from "./export-functions/submitForm.js";
 
 const commentsContainer = document.querySelector(".all-comments-on-post");
@@ -50,6 +50,8 @@ const idInput = document.querySelector("#post-ID");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const commentInput = document.querySelector("#custom-comment");
+const counter = document.querySelector(".counter");
+const maxMsgLength = document.querySelector(".max-val");
 const formField = document.querySelector("form");
 const allFormInputs = document.querySelector("fieldset").elements;
 const submitCommentBtn = document.querySelector(".submit");
@@ -61,6 +63,8 @@ const apiCommentUrl = `https://sellmo.no/Flower_Power/wp-json/wp/v2/comments?pos
 idInput.value = `${id}`;
 commentInput.textContent = "";
 
+wordCount("", counter, maxMsgLength, 500);
+
 nameInput.onkeyup = (e) => {
   validateTextInputLength(nameInput, 5, 15), validateAllInputs(allFormInputs, submitCommentBtn)
 };
@@ -68,7 +72,7 @@ emailInput.onkeyup = (e) => {
   validateTextInputLength(emailInput, 3, 50), emailRegExTest(emailInput), validateAllInputs(allFormInputs, submitCommentBtn)
 };
 commentInput.onkeyup = (e) => {
-  validateTextInputLength(commentInput, 25, 250), validateAllInputs(allFormInputs, submitCommentBtn)
+  validateTextInputLength(commentInput, 25, 500), validateAllInputs(allFormInputs, submitCommentBtn), wordCount(commentInput.value, counter, maxMsgLength, 500);
 };
 
 function refreshComments(container) {
