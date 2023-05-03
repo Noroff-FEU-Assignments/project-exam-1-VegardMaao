@@ -29,6 +29,10 @@
     margin: 0.5rem;
 }
 
+.date{
+    align-self: auto;
+}
+
 /* Newest posts scrollable box */ 
 
 .newest-posts{
