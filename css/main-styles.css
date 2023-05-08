@@ -36,6 +36,7 @@ a, p, li, label, button{
     line-height: 1.35;
     font-weight: 500;
     font-display: swap;
+    word-spacing: 0.03rem;
 }
 
 p{
