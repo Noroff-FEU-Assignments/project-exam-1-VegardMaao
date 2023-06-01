@@ -1,5 +1,7 @@
 # Project Exam  1
 
+![image](https://github.com/VegardMaao/Portfolio-management-1/blob/main/images/loppasbigblog.jpg?raw=true)
+
 ## Description
 
 This is my Project Exam 1 for the Front End programme at Noroff Fagskole.  
